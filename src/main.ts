@@ -24,7 +24,7 @@ export class App implements OnInit {
     this.isOpen = false;
   }
 
-  selectedCalamityChanged(event): void {
+  selectedCalamityChanged(event: string): void {
     this.chosenOption = event;
   }
 
