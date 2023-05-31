@@ -12,13 +12,7 @@
       (selectionChange)="selectionChangedTrigger($event)"
     >
       <mat-option unselectable="on" [disabled]="true" *ngIf="showSearchField">
-        <input
-          type="text"
-          (keyup)="onKeyUp($event)"
-          placeholder="Search..."
-          #input
-          (keydown.space)="$event.stopPropagation()"
-        />
+        <input type="text" placeholder="Search..." #input />
       </mat-option>
       <mat-option *ngFor="let option of values$ | async" [value]="option.value"
         >{{option.viewValue}}</mat-option
