@@ -1,3 +1,4 @@
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { SelectComponent } from './select.component';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
@@ -19,37 +20,31 @@ import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/
 import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
 import { MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SelectComponent } from './select.component';
-
 
 @NgModule({
-  declarations: [ 
-    SelectComponent
+  declarations: [SelectComponent],
+  imports: [
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatRadioModule,
   ],
- imports: [
-   MatButtonModule,
-   MatCardModule,
-   MatCheckboxModule,
-   MatChipsModule,
-   MatDatepickerModule,
-   MatDialogModule,
-   MatExpansionModule,
-   MatFormFieldModule,
-   MatIconModule,
-   MatInputModule,
-   MatListModule,
-   MatMenuModule,
-   MatProgressSpinnerModule,
-   MatSelectModule,
-   MatSlideToggleModule,
-   MatTableModule,
-   MatTabsModule,
-   MatToolbarModule,
-   MatSnackBarModule,
-   MatRadioModule,
- ],
- providers: [],
- bootstrap: [AppComponent] });
-
- export class AppModule {}
-
+  providers: [],
+})
+export class AppModule {}
