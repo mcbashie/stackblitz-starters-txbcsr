@@ -1,0 +1,29 @@
+<mat-form-field appearance="fill">
+  <mat-label>{{title}}</mat-label>
+  <ng-template>
+    <mat-select
+      panelClass="lazyloadselector"
+      (infiniteScroll)="getNextBatch()"
+      [formControl]="appselect"
+      [complete]="offset === tempOptions.length"
+      msInfiniteScroll
+      (openedChange)="openChanged($event)"
+      [disabled]="disabled"
+      (selectionChange)="selectionChangedTrigger($event)"
+    >
+      <mat-option unselectable="on" [disabled]="true" *ngIf="showSearchField">
+        <input
+          type="text"
+          (keyup)="onKeyUp($event)"
+          placeholder="Search..."
+          #input
+          (keydown.space)="$event.stopPropagation()"
+        />
+      </mat-option>
+      <mat-option *ngFor="let option of values$ | async" [value]="option.value"
+        >{{option.viewValue}}</mat-option
+      >
+    </mat-select>
+  </ng-template>
+  <mat-error *ngIf="appselect.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>
