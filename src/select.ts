@@ -125,7 +125,7 @@ export class SelectComponent implements OnInit, OnChanges, OnDestroy {
     this.appselect.updateValueAndValidity();
   }
   //tracks open and closing of select.
-  openChanged($event) {
+  openChanged($event: boolean) {
     this.open = $event;
     //onclose - adds/selects selected item to the top of the list if it's not in the list when closing. so it shows on the outside
     if ($event == false) {
@@ -153,12 +153,12 @@ export class SelectComponent implements OnInit, OnChanges, OnDestroy {
   //used to reset the select for when searching and old select needs to be removed.
   resetoffset() {}
   //if something gets selected
-  selectionChangedTrigger($event): void {
+  selectionChangedTrigger($event: { value: string }): void {
     this.selectedOption = $event.value;
     this.selectionChange.emit($event.value);
   }
   //search when key is pressed but not when arrows are used.
-  onKeyUp(event): void {
+  onKeyUp(event: { target: { value: string }; code: string | string[] }): void {
     this.searchText = event.target.value;
     if (!event.code.includes('Arrow')) this.fillTempOptions(event.target.value);
     else if (event.code == 'ArrowDown' || event.code == 'ArrowUp') {
