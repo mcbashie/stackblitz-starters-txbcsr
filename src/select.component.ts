@@ -41,11 +41,7 @@ export class SelectComponent implements OnInit, OnChanges {
     this.appselect.markAsTouched();
     this.appselect.updateValueAndValidity();
   }
-  //if something gets selected
-  selectionChangedTrigger($event: { value: string }): void {
-    this.selectedOption = $event.value;
-    this.selectionChange.emit($event.value);
-  }
+
   //search when key is pressed but not when arrows are used.
   onKeyUp(event: { target: { value: string }; code: string | string[] }): void {
     this.searchText = event.target.value;

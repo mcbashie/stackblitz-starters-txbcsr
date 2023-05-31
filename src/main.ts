@@ -3,7 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { DropDownItem } from './dropdown.model';
-import { } from './select';
+import { SelectComponent } from './select.component';
 
 @Component({
   selector: 'my-app',
