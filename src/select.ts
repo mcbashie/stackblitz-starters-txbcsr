@@ -26,9 +26,6 @@ export class SelectComponent implements OnInit, OnChanges {
   tempOptions = [];
   searchText = '';
   firstload = true;
-  offset = 0;
-  addselected = false;
-  valuetracker = new BehaviorSubject<string[]>([]);
   constructor() {}
   //when angular gets the data or the selected changes this will fill it
   ngOnChanges(): void {

@@ -14,7 +14,7 @@
       <mat-option unselectable="on" [disabled]="true" *ngIf="showSearchField">
         <input type="text" placeholder="Search..." #input />
       </mat-option>
-      <mat-option *ngFor="let option of values$ | async" [value]="option.value"
+      <mat-option *ngFor="let option of tempOptions" [value]="option.value"
         >{{option.viewValue}}</mat-option
       >
     </mat-select>
