@@ -33,6 +33,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDialogModule,
     MatExpansionModule,
     MatFormFieldModule,
+    SelectComponent,
     MatIconModule,
     MatInputModule,
     MatListModule,
