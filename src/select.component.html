@@ -1,11 +1,7 @@
 <mat-form-field appearance="fill">
   <mat-label>{{ title }}</mat-label>
   <ng-template>
-    <mat-select
-      [formControl]="appselect"
-      [complete]="true"
-      [disabled]="disabled"
-    >
+    <mat-select [formControl]="appselect" [disabled]="disabled">
       <mat-option unselectable="on" [disabled]="true" *ngIf="showSearchField">
         <input type="text" placeholder="Search..." #input />
       </mat-option>
