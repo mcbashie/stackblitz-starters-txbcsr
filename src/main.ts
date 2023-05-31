@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { DropDownItem } from './dropdown.model';
+import { } from './select';
 
 @Component({
   selector: 'my-app',
@@ -10,7 +11,7 @@ import { DropDownItem } from './dropdown.model';
   imports: [CommonModule],
   template: `
   <app-select title="Title" [disabled]="!isOpen" [options]="calamityOptions" [selectedOption]=""
-  (selectionChange)="selectedCalamityChanged($event)" [showSearchField]="false">
+  [showSearchField]="false">
   </app-select>
   `,
 })
@@ -22,10 +23,6 @@ export class App implements OnInit {
 
   constructor() {
     this.isOpen = false;
-  }
-
-  selectedCalamityChanged(event: string): void {
-    this.chosenOption = event;
   }
 
   ngOnInit(): void {
